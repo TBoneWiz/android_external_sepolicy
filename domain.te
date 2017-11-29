@@ -201,6 +201,9 @@ attribute rmt_placeholder;
 # Limit raw I/O to these whitelisted domains.
 neverallow { domain -kernel -init -recovery -ueventd -watchdogd -healthd -vold -uncrypt -tee -rmt_placeholder } self:capability sys_rawio;
 
+# Do not allow reading the last boot timestamp from system properties
+neverallow { domain -init -system_server } firstboot_prop:file r_file_perms;
+
 # No process can map low memory (< CONFIG_LSM_MMAP_MIN_ADDR).
 neverallow domain self:memprotect mmap_zero;
 

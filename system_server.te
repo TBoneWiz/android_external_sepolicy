@@ -292,6 +292,9 @@ set_prop(system_server, debug_prop)
 set_prop(system_server, powerctl_prop)
 set_prop(system_server, fingerprint_prop)
 
+# Read/write the property which keeps track of whether this is the first start of system_server
+set_prop(system_server, firstboot_prop)
+
 # ctl interface
 allow system_server ctl_bootanim_prop:property_service set;
 
