@@ -94,6 +94,9 @@ allow vold fsck_exec:file rx_file_perms;
 allow vold fscklogs:dir rw_dir_perms;
 allow vold fscklogs:file create_file_perms;
 
+# fix logd denial.
+allow vold logd:dir r_dir_perms;
+
 #
 # Rules to support encrypted fs support.
 #
